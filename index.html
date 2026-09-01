@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineering Portfolio · Vineet Kotian</title>
+  <meta name="description" content="Vineet Kotian — Technical Program Manager. Pipelines I designed: weekly release-health reporting in minutes, quarterly vulnerability scanning in hours, and a 50% shorter validation cycle." />
+  <meta name="author" content="Vineet Kotian" />
+  <link rel="canonical" href="https://vineetkotian.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI Engineering Portfolio · Vineet Kotian" />
+  <meta property="og:description" content="Pipelines I designed — release-health reporting, quarterly vulnerability scanning, and validated SDLC documentation. Claude Code is the tooling, not the author." />
+  <meta property="og:url" content="https://vineetkotian.vercel.app/" />
+  <meta property="og:site_name" content="Vineet Kotian" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AI Engineering Portfolio · Vineet Kotian" />
+  <meta name="twitter:description" content="Pipelines I designed — release-health reporting, quarterly vulnerability scanning, and validated SDLC documentation." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #161b27;
+      --surface2: #1e2536;
+      --border: #2a3350;
+      --accent: #5b8dee;
+      --accent2: #a78bfa;
+      --green: #34d399;
+      --orange: #fb923c;
+      --text: #e2e8f0;
+      --muted: #8899aa;
+      --radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      background: var(--surface2);
+      padding: 0.08em 0.38em;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,15,20,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    nav .logo {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--text); }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(91,141,238,0.12), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(91,141,238,0.1);
+      border: 1px solid rgba(91,141,238,0.3);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      position: relative;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .btn {
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { background: #4a7de0; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 620px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .card-icon.blue { background: rgba(91,141,238,0.15); }
+    .card-icon.purple { background: rgba(167,139,250,0.15); }
+    .card-icon.green { background: rgba(52,211,153,0.15); }
+    .card-icon.orange { background: rgba(251,146,60,0.15); }
+    .card-icon.pink { background: rgba(236,72,153,0.12); }
+    .card-icon.teal { background: rgba(20,184,166,0.12); }
+
+    .card-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.15rem; }
+    .card-domain { font-size: 0.78rem; color: var(--muted); }
+    .card-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
+    .card-outcomes {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+    }
+    .card-outcomes-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .card-outcomes ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .card-outcomes li {
+      font-size: 0.83rem;
+      color: var(--text);
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .card-outcomes li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .tag-blue { background: rgba(91,141,238,0.15); color: var(--accent); }
+    .tag-purple { background: rgba(167,139,250,0.15); color: var(--accent2); }
+    .tag-green { background: rgba(52,211,153,0.15); color: var(--green); }
+    .tag-orange { background: rgba(251,146,60,0.15); color: var(--orange); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+    }
+    .cred-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+    .cred-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .cred-badge.blue { background: rgba(91,141,238,0.15); }
+    .cred-badge.purple { background: rgba(167,139,250,0.15); }
+    .cred-badge.green { background: rgba(52,211,153,0.15); }
+    .cred-badge.orange { background: rgba(251,146,60,0.15); }
+    .cred-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.15rem; }
+    .cred-issuer { font-size: 0.78rem; color: var(--muted); }
+
+    .card-workflow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: -0.4rem;
+    }
+    .cw-label {
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 0.3rem;
+    }
+    .step-pill-sm {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.12rem 0.55rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .step-arrow-sm { color: var(--muted); font-size: 0.72rem; }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .impact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      text-align: center;
+    }
+    .impact-emoji { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .impact-title { font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem; }
+    .impact-desc { font-size: 0.82rem; color: var(--muted); }
+
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(91,141,238,0.08), rgba(167,139,250,0.08));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      margin: 2rem auto;
+      max-width: 1100px;
+    }
+    .cta-section h2 { margin-bottom: 0.5rem; }
+    .cta-section p { color: var(--muted); margin-bottom: 1.5rem; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+    .pill {
+      font-size: 0.7rem;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 0.15rem 0.55rem;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+    .pill-teal { background: rgba(20,184,166,0.15); color: #14b8a6; }
+    .pill-blue { background: rgba(91,141,238,0.15); color: #5b8dee; }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; }
+      nav ul { display: none; }
+      .hero { padding: 4rem 1.25rem 3rem; }
+      section { padding: 3rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">Vineet Kotian</span>
+  <ul>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Credentials</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-name">Vineet Kotian</div>
+  <div class="hero-badge">Technical Program Manager · AI as tooling</div>
+  <h1>I design the process.<br/><span>AI runs the pipeline.</span></h1>
+  <p>Pipelines and products I decomposed, then automated — weekly release-health reporting, quarterly vulnerability scanning, and validated quality documentation — with Claude Code as the execution layer, not the author.</p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="resume.pdf" download="Vineet_Kotian_Resume.pdf" class="btn btn-outline">Download Resume ↓</a>
+    <a href="#contact" class="btn btn-outline">Connect</a>
+  </div>
+</div>
+
+<hr class="divider" />
+
+<section id="projects">
+  <span class="section-tag">Featured Work</span>
+  <h2>Selected Work</h2>
+  <p class="section-sub">Each project is a process I broke into failure points, then turned into an orchestratable pipeline. Claude Code is the tooling.</p>
+
+  <div class="projects-grid">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon purple">📊</div>
+        <div>
+          <div class="card-title">Automated DevOps Intelligence Report</div>
+          <div class="card-domain">DevOps · Bitbucket · Jira · Confluence</div>
+        </div>
+      </div>
+      <p class="card-desc">Designed and orchestrated a recurring release-health pipeline triggered by a single <code>/</code> command — pulling live data from Bitbucket and Jira, then publishing formatted reports to Confluence. Defined the epic-completion, open-PR, QE-gap, and bug queries the report has to answer, then automated the pull–format–publish loop.</p>
+      <div class="card-workflow">
+        <span class="cw-label">Flow</span>
+        <span class="step-pill-sm">Bitbucket API</span>
+        <span class="step-arrow-sm">→</span>
+        <span class="step-pill-sm">Jira Query</span>
+        <span class="step-arrow-sm">→</span>
+        <span class="step-pill-sm">Test Coverage</span>
+        <span class="step-arrow-sm">→</span>
+        <span class="step-pill-sm">Report Gen</span>
+        <span class="step-arrow-sm">→</span>
+        <span class="step-pill-sm">Confluence Publish</span>
+      </div>
+      <div class="card-outcomes">
+        <div class="card-outcomes-title">Impact</div>
+        <ul>
+          <li>Cut a multi-hour weekly write-up — daily for critical-path releases — down to minutes</li>
+          <li>One command now generates the full release-health dashboard</li>
+          <li>Automated PR reviewer accountability tracking</li>
+          <li>Epic-level dev vs QE split and Cypress / Playwright / Postman coverage gaps</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag tag-purple">Custom Skill</span>
+        <span class="tag tag-blue">Bitbucket API</span>
+        <span class="tag tag-blue">Jira API</span>
+        <span class="tag tag-green">Confluence</span>
+        <span class="tag tag-orange">TypeScript</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon orange">🛡️</div>
+        <div>
+          <div class="card-title">Security Vulnerability Scanning Pipeline</div>
+          <div class="card-domain">Security Engineering · Snyk · .NET</div>
+        </div>
+      </div>
+      <p class="card-desc">Designed and orchestrated a quarterly vulnerability lifecycle pipeline across 18 software connectors and their active versions — triggered by a single <code>/quarterly-vlt</code> command. Defined the checkout, scan, aggregate, and triage logic; used Claude Code to execute git checkouts per release tag, run Snyk scans, resolve environment-specific path issues, and produce a structured quarterly compliance report.</p>
+      <div class="card-workflow">
+        <span class="cw-label">Flow</span>
+        <span class="step-pill-sm">Git Tag Checkout</span>
+        <span class="step-arrow-sm">→</span>
+        <span class="step-pill-sm">Snyk Scan</span>
+        <span class="step-arrow-sm">→</span>
+        <span class="step-pill-sm">Aggregate</span>
+        <span class="step-arrow-sm">→</span>
+        <span class="step-pill-sm">Triage</span>
+        <span class="step-arrow-sm">→</span>
+        <span class="step-pill-sm">Compliance Report</span>
+      </div>
+      <div class="card-outcomes">
+        <div class="card-outcomes-title">Impact</div>
+        <ul>
+          <li>Collapsed a multi-day manual process — CLI scans plus dashboard exports — into a couple of hours</li>
+          <li>18 connectors and their active versions scanned in one automated session</li>
+          <li>Snyk OAuth token management across CLI versions</li>
+          <li>Structured quarterly compliance report, with client identifiers omitted</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag tag-orange">Snyk</span>
+        <span class="tag tag-blue">.NET Security</span>
+        <span class="tag tag-purple">Compliance</span>
+        <span class="tag tag-green">Automation</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon pink">📄</div>
+        <div>
+          <div class="card-title">AI-Assisted Quality Documentation</div>
+          <div class="card-domain">Technical Writing · SDLC · Regulated Software</div>
+        </div>
+      </div>
+      <p class="card-desc">Revised a Master Quality Plan (MQP) and Software Development Life Cycle SOP for a regulated software product. Analyzed existing Word/Markdown documents, identified gaps against industry standards, and authored new sections with traceability tables — using Claude Code as a drafting and gap-analysis tool, not the document owner.</p>
+      <div class="card-outcomes">
+        <div class="card-outcomes-title">Impact</div>
+        <ul>
+          <li>Compressed hotfix and custom-release validation cycle time by 50% (14 days → 7 days)</li>
+          <li>Program-level document matrix (URS, FRS, SDS, TP, TC)</li>
+          <li>AI-assisted SDLC workflow integrated into the regulated process</li>
+          <li>Document traceability gap analysis completed</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag tag-purple">Technical Writing</span>
+        <span class="tag tag-blue">Quality Systems</span>
+        <span class="tag tag-green">Traceability</span>
+        <span class="tag tag-orange">Regulated SW</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon teal">🌬️</div>
+        <div>
+          <div class="card-title">AirWise <span class="pill pill-teal">Personal Project</span></div>
+          <div class="card-domain">Mobile & Web App · React Native · Expo</div>
+        </div>
+      </div>
+      <p class="card-desc">Designed and shipped a cross-platform air quality monitoring app from scratch. AirWise detects GPS location, fetches real-time AQI from OpenWeatherMap, applies India NAQI (CPCB PM2.5) breakpoints via a custom algorithm, and surfaces a 24-hour forecast with a “best outdoor window” recommendation. Claude Code was implementation tooling. Deployed on Vercel.</p>
+      <div class="card-outcomes">
+        <div class="card-outcomes-title">Shipped</div>
+        <ul>
+          <li>Full app scaffolded and shipped: Home + Timeline screens, 3 typed components</li>
+          <li>Custom CPCB PM2.5 AQI algorithm — not a third-party library</li>
+          <li>Best-time-window detection across 24-hour hourly forecast</li>
+          <li>Cross-platform: iOS · Android · Web (Vercel)</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag tag-green">React Native</span>
+        <span class="tag tag-blue">Expo</span>
+        <span class="tag tag-purple">TypeScript</span>
+        <span class="tag tag-orange">OpenWeatherMap API</span>
+        <span class="tag tag-green">Vercel</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon blue">📼</div>
+        <div>
+          <div class="card-title">YouTube Transcript Vault <span class="pill pill-blue">Personal Project</span></div>
+          <div class="card-domain">Chrome Extension · File System Access API · Static Site Publishing</div>
+        </div>
+      </div>
+      <p class="card-desc">Designed a Chrome extension that captures a YouTube video’s existing captions and files them as Markdown notes into a personal, browsable “learning vault” — no AI, no server, no API keys, no transcription cost. Captions already exist as text on the page; the extension fetches, formats, and saves them, then can optionally publish the vault as a static site to GitHub Pages.</p>
+      <div class="card-outcomes">
+        <div class="card-outcomes-title">Shipped</div>
+        <ul>
+          <li>One-click capture → auto-formatted Markdown with chapters, description, and timestamped transcript</li>
+          <li>Zero AI/API dependency — deliberately scoped to avoid token cost and taxonomy drift</li>
+          <li>One-click Publish turns the vault into a live static site via GitHub’s API</li>
+          <li>Manifest V3 Chrome extension with unit-tested core library functions</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag tag-blue">Chrome Extension</span>
+        <span class="tag tag-purple">Manifest V3</span>
+        <span class="tag tag-green">File System Access API</span>
+        <span class="tag tag-orange">GitHub API</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section id="skills">
+  <span class="section-tag">Verified</span>
+  <h2>Certifications & Training</h2>
+  <p class="section-sub">Formal credentials backing the delivery and AI-tooling work above — not self-rated skill claims.</p>
+
+  <div class="skills-grid">
+    <div class="skill-card cred-card">
+      <div class="cred-badge blue">🎯</div>
+      <div>
+        <div class="cred-name">Certified Scrum Master (CSM)</div>
+        <div class="cred-issuer">Scrum Alliance</div>
+      </div>
+    </div>
+
+    <div class="skill-card cred-card">
+      <div class="cred-badge green">📈</div>
+      <div>
+        <div class="cred-name">Lean Six Sigma Green Belt</div>
+        <div class="cred-issuer">Process improvement & quality</div>
+      </div>
+    </div>
+
+    <div class="skill-card cred-card">
+      <div class="cred-badge purple">🤖</div>
+      <div>
+        <div class="cred-name">AI Fluency Framework</div>
+        <div class="cred-issuer">Applied AI collaboration practices</div>
+      </div>
+    </div>
+
+    <div class="skill-card cred-card">
+      <div class="cred-badge orange">⚡</div>
+      <div>
+        <div class="cred-name">Claude Code 101 & Claude Code in Action</div>
+        <div class="cred-issuer">Anthropic</div>
+      </div>
+    </div>
+
+    <div class="skill-card cred-card">
+      <div class="cred-badge blue">📦</div>
+      <div>
+        <div class="cred-name">Product Management Foundation</div>
+        <div class="cred-issuer">Accredian</div>
+      </div>
+    </div>
+
+    <div class="skill-card cred-card">
+      <div class="cred-badge green">🧭</div>
+      <div>
+        <div class="cred-name">Leadership Accelerator — Servant Leadership Program</div>
+        <div class="cred-issuer">HERE Technologies</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section id="impact">
+  <span class="section-tag">At a Glance</span>
+  <h2>Career Snapshot</h2>
+  <p class="section-sub">The track record behind the projects above.</p>
+
+  <div class="impact-grid">
+    <div class="impact-card">
+      <div class="impact-emoji">🕒</div>
+      <div class="impact-title">14+ Years</div>
+      <div class="impact-desc">Progression from GIS Analyst to Project Coordinator to Project Lead to Product Operations Lead.</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-emoji">👥</div>
+      <div class="impact-title">20+ Direct Reports</div>
+      <div class="impact-desc">Managed 20+ solid-line reports as Project Lead at HERE Technologies, within a ~60-person global delivery organization spanning EMEA, Americas, and APAC — before moving into an individual-contributor Product Ops role.</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-emoji">🏢</div>
+      <div class="impact-title">2 Employers, 14+ Years</div>
+      <div class="impact-desc">HERE Technologies (2011–2022) and Scitara Corporation (2022–2026) — depth over job-hopping.</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-emoji">🎓</div>
+      <div class="impact-title">6 Certifications</div>
+      <div class="impact-desc">Spanning Scrum, Lean Six Sigma, Product Management, Leadership, and AI-native tooling (Claude Code).</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<div class="cta-section" id="contact">
+  <span class="section-tag">Let's Connect</span>
+  <h2>Interested in AI-assisted engineering?</h2>
+  <p>Connect with me on LinkedIn or try AirWise — a live app I designed and shipped.</p>
+  <div class="hero-cta">
+    <a href="https://www.linkedin.com/in/vineet-kotian-67732993/" class="btn btn-primary">LinkedIn</a>
+    <a href="https://airwise-eight.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Try AirWise ↗</a>
+  </div>
+</div>
+
+<footer>
+  <p>Built with <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a> as tooling · © 2026 Vineet Kotian · Client identifiers omitted for confidentiality</p>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.card, .skill-card, .impact-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
