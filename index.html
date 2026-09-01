@@ -196,6 +196,31 @@
       margin-bottom: 2.5rem;
       max-width: 620px;
     }
+    .subsection {
+      margin: 3rem 0 1.25rem;
+    }
+    .subsection h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+    .subsection p {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 0.95rem;
+    }
+    .card-cta { margin-top: auto; }
+    .card-cta .btn {
+      display: inline-block;
+      padding: 0.45rem 0.95rem;
+      font-size: 0.8rem;
+    }
+    .in-progress-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
 
     .projects-grid {
       display: grid;
@@ -321,6 +346,7 @@
     .cred-badge.purple { background: rgba(167,139,250,0.15); }
     .cred-badge.green { background: rgba(52,211,153,0.15); }
     .cred-badge.orange { background: rgba(251,146,60,0.15); }
+    .cred-badge.teal { background: rgba(20,184,166,0.12); }
     .cred-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.15rem; }
     .cred-issuer { font-size: 0.78rem; color: var(--muted); }
 
@@ -399,6 +425,7 @@
     }
     .pill-teal { background: rgba(20,184,166,0.15); color: #14b8a6; }
     .pill-blue { background: rgba(91,141,238,0.15); color: #5b8dee; }
+    .pill-orange { background: rgba(251,146,60,0.15); color: #fb923c; }
 
     @media (max-width: 640px) {
       nav { padding: 0 1rem; }
@@ -488,7 +515,7 @@
           <div class="card-domain">Security Engineering · Snyk · .NET</div>
         </div>
       </div>
-      <p class="card-desc">Designed and orchestrated a quarterly vulnerability lifecycle pipeline across 18 software connectors and their active versions — triggered by a single <code>/quarterly-vlt</code> command. Defined the checkout, scan, aggregate, and triage logic; used Claude Code to execute git checkouts per release tag, run Snyk scans, resolve environment-specific path issues, and produce a structured quarterly compliance report.</p>
+      <p class="card-desc">Designed and orchestrated a quarterly vulnerability lifecycle pipeline across 30 software connectors and their active versions — triggered by a single <code>/quarterly-vlt</code> command. Defined the checkout, scan, aggregate, and triage logic. Orchestrated git checkouts per release tag, Snyk scans, environment-specific path fixes, and a structured quarterly compliance report — with Claude Code as the execution layer.</p>
       <div class="card-workflow">
         <span class="cw-label">Flow</span>
         <span class="step-pill-sm">Git Tag Checkout</span>
@@ -505,7 +532,7 @@
         <div class="card-outcomes-title">Impact</div>
         <ul>
           <li>Collapsed a multi-day manual process — CLI scans plus dashboard exports — into a couple of hours</li>
-          <li>18 connectors and their active versions scanned in one automated session</li>
+          <li>30 connectors and their active versions scanned in one automated session</li>
           <li>Snyk OAuth token management across CLI versions</li>
           <li>Structured quarterly compliance report, with client identifiers omitted</li>
         </ul>
@@ -598,6 +625,72 @@
     </div>
 
   </div>
+
+  <div class="subsection" id="prototypes">
+    <h3>Self-initiated prototypes</h3>
+    <p>Early-stage prototypes I built solo with AI-assisted development (SuperGrok). Deployed on Vercel, source on GitHub, shared with practitioners for feedback.</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon purple">🔁</div>
+        <div>
+          <div class="card-title">PM Loop <span class="pill pill-teal">Prototype</span></div>
+          <div class="card-domain">Product Management · Learning App</div>
+        </div>
+      </div>
+      <p class="card-desc">A structured learning app for aspiring product managers, built to address the gap between PM theory and day-to-day practice. I defined the problem, scoped the MVP, and shipped a working prototype.</p>
+      <div class="tags">
+        <span class="tag tag-purple">Product Management</span>
+        <span class="tag tag-green">Vercel</span>
+        <span class="tag tag-blue">Prototype</span>
+      </div>
+      <div class="card-cta">
+        <a href="https://loop-pm-gym.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Try PM Loop ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon teal">🏙️</div>
+        <div>
+          <div class="card-title">Mum-Dev-Tracker <span class="pill pill-teal">Prototype</span></div>
+          <div class="card-domain">Urban Planning · Public Data</div>
+        </div>
+      </div>
+      <p class="card-desc">A tracker for active development projects across Mumbai, built on public planning data. Prototype stage — designed, scoped, and shipped solo.</p>
+      <div class="tags">
+        <span class="tag tag-green">Public Data</span>
+        <span class="tag tag-blue">Mumbai</span>
+        <span class="tag tag-purple">Prototype</span>
+      </div>
+      <div class="card-cta">
+        <a href="https://mumbai-dev-tracker.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Try Mum-Dev-Tracker ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon orange">🚢</div>
+        <div>
+          <div class="card-title">Portpath <span class="pill pill-orange">In progress</span></div>
+          <div class="card-domain">Trade & Logistics · India Import Flow</div>
+        </div>
+      </div>
+      <p class="card-desc">A step-by-step tracker for importing and selling goods in India, mapping a process that is fragmented across agencies and poorly documented. Prototype in feedback with practitioners from trade and logistics backgrounds.</p>
+      <div class="tags">
+        <span class="tag tag-orange">Trade</span>
+        <span class="tag tag-blue">Logistics</span>
+        <span class="tag tag-purple">Prototype</span>
+      </div>
+      <div class="card-cta">
+        <span class="in-progress-note">Prototype in progress</span>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <hr class="divider" />
@@ -637,6 +730,14 @@
       <div>
         <div class="cred-name">Claude Code 101 & Claude Code in Action</div>
         <div class="cred-issuer">Anthropic</div>
+      </div>
+    </div>
+
+    <div class="skill-card cred-card">
+      <div class="cred-badge teal">🧠</div>
+      <div>
+        <div class="cred-name">Foundations of AI and Machine Learning</div>
+        <div class="cred-issuer">Microsoft</div>
       </div>
     </div>
 
@@ -684,8 +785,8 @@
     </div>
     <div class="impact-card">
       <div class="impact-emoji">🎓</div>
-      <div class="impact-title">6 Certifications</div>
-      <div class="impact-desc">Spanning Scrum, Lean Six Sigma, Product Management, Leadership, and AI-native tooling (Claude Code).</div>
+      <div class="impact-title">7 Certifications</div>
+      <div class="impact-desc">Spanning Scrum, Lean Six Sigma, Product Management, Leadership, Microsoft AI/ML, and AI-native tooling (Claude Code).</div>
     </div>
   </div>
 </section>
