@@ -1,22 +1,80 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Vineet Kotian · AI Workbench</title>
 <style>
-body{margin:0;background:#0d0f14;color:#e2e8f0;font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:1100px;margin:auto;padding:48px 24px}.eyebrow{color:#5b8dee;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hero{padding:28px 0 40px}.hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1}.muted{color:#8899aa}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}.card{background:#161b27;border:1px solid #2a3350;border-radius:12px;padding:20px}.badge{display:inline-block;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:700;margin-left:6px}.active{background:#153d31;color:#34d399}.stale{background:#4a2e18;color:#fb923c}a{color:#5b8dee}
-</style></head><body><main>
-<section class="hero"><div class="eyebrow">AI Workbench</div><h1>What I'm building, learning and exploring with AI.</h1><p class="muted">A public-safe projection of my private AI workbench. Private ChatGPT exports and conversation content never belong in this site.</p></section>
-<section><div class="eyebrow">Current work</div><h2>Work items</h2><div class="grid">
-<div class="card"><h3>AI Workbench <span class="badge active">active</span></h3><p class="muted">Priority: high</p></div>
-<div class="card"><h3>AI Skills Repository <span class="badge stale">stale</span></h3><p class="muted">Priority: medium</p></div>
-<div class="card"><h3>AI / LLM Learning Path <span class="badge stale">stale</span></h3><p class="muted">Priority: medium</p></div>
-<div class="card"><h3>LinkedIn AI Content Program <span class="badge active">active</span></h3><p class="muted">Priority: high</p></div>
-<div class="card"><h3>Freelance Software Agency <span class="badge stale">stale</span></h3><p class="muted">Priority: medium</p></div>
-<div class="card"><h3>Product / Career Transition <span class="badge stale">stale</span></h3><p class="muted">Priority: medium</p></div>
-</div></section>
-<section><div class="eyebrow">Workbench → Overall Portfolio</div><h2>Evidence candidates</h2><p class="muted">Candidates require human validation before becoming public portfolio claims.</p><div class="grid">
-<div class="card"><h3>AI-assisted Daily Standup Operations</h3><p class="muted">Candidate for strengthening the overall portfolio; validate evidence, authorship, status and outcomes first.</p></div><div class="card"><h3>Defect Triage Redesign</h3><p class="muted">Candidate for strengthening the overall portfolio; validate evidence, authorship, status and outcomes first.</p></div><div class="card"><h3>Audit → RCA → CAPA → Preventive Controls</h3><p class="muted">Candidate for strengthening the overall portfolio; validate evidence, authorship, status and outcomes first.</p></div><div class="card"><h3>Release Governance & Traceability</h3><p class="muted">Candidate for strengthening the overall portfolio; validate evidence, authorship, status and outcomes first.</p></div><div class="card"><h3>Jira Automation & Engineering Operations</h3><p class="muted">Candidate for strengthening the overall portfolio; validate evidence, authorship, status and outcomes first.</p></div><div class="card"><h3>Snyk / Vulnerability Management</h3><p class="muted">Candidate for strengthening the overall portfolio; validate evidence, authorship, status and outcomes first.</p></div><div class="card"><h3>AI Structured Outputs</h3><p class="muted">Candidate for strengthening the overall portfolio; validate evidence, authorship, status and outcomes first.</p></div><div class="card"><h3>AI Workbench itself</h3><p class="muted">Candidate for strengthening the overall portfolio; validate evidence, authorship, status and outcomes first.</p></div>
-</div></section>
-<section><div class="eyebrow">Existing public portfolio</div><h2>Curated projects</h2><div class="grid">
-<div class="card"><h3>Automated DevOps Intelligence Report</h3><p class="muted">Curated public evidence in the overall portfolio.</p></div><div class="card"><h3>Security Vulnerability Scanning Pipeline</h3><p class="muted">Curated public evidence in the overall portfolio.</p></div><div class="card"><h3>AI-Assisted Quality Documentation</h3><p class="muted">Curated public evidence in the overall portfolio.</p></div><div class="card"><h3>AirWise</h3><p class="muted">Curated public evidence in the overall portfolio.</p></div><div class="card"><h3>YouTube Transcript Vault</h3><p class="muted">Curated public evidence in the overall portfolio.</p></div><div class="card"><h3>PM Loop</h3><p class="muted">Curated public evidence in the overall portfolio.</p></div><div class="card"><h3>Mum-Dev-Tracker</h3><p class="muted">Curated public evidence in the overall portfolio.</p></div><div class="card"><h3>Portpath</h3><p class="muted">Curated public evidence in the overall portfolio.</p></div>
-</div></section>
-</main></body></html>
+:root{--bg:#0d0f14;--surface:#161b27;--surface2:#1e2536;--border:#2a3350;--accent:#5b8dee;--green:#34d399;--orange:#fb923c;--purple:#a78bfa;--text:#e2e8f0;--muted:#8899aa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1180px;margin:auto;padding:38px 24px 70px}.eyebrow{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;margin:.45rem 0 1rem}.hero{padding:20px 0 36px}.hero p{max-width:720px;color:var(--muted);font-size:1.03rem}
+.notice{border:1px solid var(--border);background:rgba(91,141,238,.06);border-radius:12px;padding:14px 16px;color:var(--muted);margin:18px 0 30px}.notice strong{color:var(--text)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0 40px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}.stat b{display:block;font-size:1.8rem}.stat span{color:var(--muted);font-size:.78rem}
+section{margin:42px 0}h2{margin:.35rem 0 .4rem;font-size:1.55rem}.section-sub{color:var(--muted);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px}.card h3{margin:0 0 6px;font-size:1rem}.muted{color:var(--muted);font-size:.86rem}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.pill{border:1px solid var(--border);border-radius:999px;padding:2px 8px;font-size:.7rem;color:var(--muted)}.active{color:var(--green);border-color:rgba(52,211,153,.35)}.high{color:var(--orange);border-color:rgba(251,146,60,.35)}.candidate{color:var(--purple);border-color:rgba(167,139,250,.35)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.filter{cursor:pointer;background:var(--surface);border:1px solid var(--border);color:var(--muted);border-radius:999px;padding:6px 11px}.filter.selected{border-color:var(--accent);color:var(--text)}
+.hidden{display:none}.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.step{padding:14px;background:var(--surface2);border-radius:10px;border:1px solid var(--border)}.step b{display:block;margin-bottom:4px}.step span{color:var(--muted);font-size:.8rem}
+footer{border-top:1px solid var(--border);padding-top:24px;color:var(--muted);font-size:.8rem;margin-top:50px}
+</style>
+</head>
+<body><main>
+<header class="hero">
+<div class="eyebrow">AI Workbench · Public-Safe Projection</div>
+<h1>What I'm building, learning and turning into evidence.</h1>
+<p>The Workbench is the evidence layer behind my overall portfolio. It helps separate active work, learning, skills and career evidence without exposing private ChatGPT conversations.</p>
+<div class="notice"><strong>Public boundary:</strong> this page contains curated seed data only. Private exports, conversation bodies, source IDs and private databases stay outside GitHub. Evidence candidates still require human validation before publication.</div>
+</header>
+
+<div class="stats" id="stats"></div>
+
+<section>
+<div class="eyebrow">Current work</div><h2>Work items</h2><p class="section-sub">The small set of workstreams currently worth attention.</p>
+<div class="filters" id="filters"></div><div class="grid" id="work"></div>
+</section>
+
+<section>
+<div class="eyebrow">Workbench → Overall Portfolio</div><h2>Career evidence candidates</h2><p class="section-sub">Potential evidence discovered from prior work. These are not public claims until validated.</p>
+<div class="grid" id="evidence"></div>
+</section>
+
+<section>
+<div class="eyebrow">Existing public portfolio</div><h2>Curated projects</h2><p class="section-sub">The existing overall portfolio remains the authority for public presentation.</p>
+<div class="grid" id="projects"></div>
+</section>
+
+<section>
+<div class="eyebrow">Operating model</div><h2>How the Workbench fits together</h2>
+<div class="flow">
+<div class="step"><b>1 · Private source</b><span>ChatGPT export is processed locally and never published.</span></div>
+<div class="step"><b>2 · Intelligence</b><span>New or changed conversations are classified into work, learning, skills and evidence.</span></div>
+<div class="step"><b>3 · Validation</b><span>Evidence is checked for authorship, status, outcome and public suitability.</span></div>
+<div class="step"><b>4 · Privacy gate</b><span>Candidate public artifacts pass the privacy scanner before commit.</span></div>
+<div class="step"><b>5 · Curated portfolio</b><span>Only deliberately approved material can strengthen the overall portfolio.</span></div>
+</div>
+</section>
+
+<footer>AI Workbench · Evidence discovery and portfolio governance · Public-safe data only</footer>
+</main>
+<script>
+async function load(){
+ const res=await fetch("data/public/portfolio_registry.json");
+ const d=await res.json();
+ const work=d.work_items||[], ev=d.career_evidence||[], projects=d.public_projects||[];
+ const types=[...new Set(work.map(x=>x.type))];
+ document.getElementById("stats").innerHTML=[
+  [work.length,"current work items"],[ev.length,"evidence candidates"],[projects.length,"public projects"],[work.filter(x=>x.status==="active").length,"active work items"]
+ ].map(x=>'<div class="stat"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>').join("");
+ document.getElementById("filters").innerHTML='<button class="filter selected" data-type="all">All</button>'+types.map(t=>'<button class="filter" data-type="'+t+'">'+t+'</button>').join("");
+ function renderWork(filter){
+  document.getElementById("work").innerHTML=work.filter(x=>filter==="all"||x.type===filter).map(x=>
+   '<article class="card"><h3>'+x.name+'</h3><div class="muted">'+x.type+' · '+x.portfolio_relation+'</div><div class="meta"><span class="pill '+(x.status==="active"?"active":"")+'">'+x.status+'</span><span class="pill '+(x.priority==="high"?"high":"")+'">'+x.priority+' priority</span></div></article>').join("");
+ }
+ renderWork("all");
+ document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");renderWork(b.dataset.type)});
+ document.getElementById("evidence").innerHTML=ev.map(x=>'<article class="card"><h3>'+x.name+'</h3><div class="meta"><span class="pill candidate">validation '+x.validation+'</span></div></article>').join("");
+ document.getElementById("projects").innerHTML=projects.map(x=>'<article class="card"><h3>'+x.name+'</h3><div class="muted">Curated public evidence in the overall portfolio.</div></article>').join("");
+}
+load().catch(e=>{document.getElementById("work").innerHTML='<div class="card">Registry could not be loaded.</div>';console.error(e)});
+</script>
+</body></html>
