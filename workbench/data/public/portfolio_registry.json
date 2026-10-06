@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "purpose": "Public-safe seed registry for the AI Workbench and overall portfolio bridge.",
+  "authority": "Curated seed data only; private ChatGPT records are not included.",
+  "work_items": [
+    {"id":"wi-ai-workbench","name":"AI Workbench","type":"project","status":"active","priority":"high","portfolio_relation":"candidate"},
+    {"id":"wi-ai-skills","name":"AI Skills Repository","type":"skill","status":"active","priority":"high","portfolio_relation":"candidate"},
+    {"id":"wi-ai-learning","name":"AI / LLM Learning Path","type":"learning","status":"active","priority":"high","portfolio_relation":"candidate"},
+    {"id":"wi-linkedin-ai","name":"LinkedIn AI Content Program","type":"content","status":"active","priority":"high","portfolio_relation":"candidate"},
+    {"id":"wi-freelance","name":"Freelance Software Agency","type":"project","status":"active","priority":"medium","portfolio_relation":"candidate"},
+    {"id":"wi-career-transition","name":"Product / Career Transition","type":"career","status":"active","priority":"high","portfolio_relation":"candidate"}
+  ],
+  "career_evidence": [
+    {"id":"ce-standup-ops","name":"AI-assisted Daily Standup Operations","validation":"required"},
+    {"id":"ce-defect-triage","name":"Defect Triage Redesign","validation":"required"},
+    {"id":"ce-audit-rca-capa","name":"Audit → RCA → CAPA → Preventive Controls","validation":"required"},
+    {"id":"ce-release-governance","name":"Release Governance & Traceability","validation":"required"},
+    {"id":"ce-jira-automation","name":"Jira Automation & Engineering Operations","validation":"required"},
+    {"id":"ce-snyk","name":"Snyk / Vulnerability Management","validation":"required"},
+    {"id":"ce-ai-structured-output","name":"AI Structured Outputs","validation":"required"}
+  ],
+  "public_projects": [
+    {"id":"pp-devops-report","name":"Automated DevOps Intelligence Report"},
+    {"id":"pp-security-pipeline","name":"Security Vulnerability Scanning Pipeline"},
+    {"id":"pp-quality-docs","name":"AI-Assisted Quality Documentation"},
+    {"id":"pp-airwise","name":"AirWise"},
+    {"id":"pp-youtube-vault","name":"YouTube Transcript Vault"},
+    {"id":"pp-pm-loop","name":"PM Loop"},
+    {"id":"pp-mumbai-tracker","name":"Mum-Dev-Tracker"},
+    {"id":"pp-portpath","name":"Portpath"}
+  ]
+}
