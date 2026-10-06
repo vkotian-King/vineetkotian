@@ -1,0 +1,13 @@
+# Private ChatGPT data — NEVER commit
+/data/private/
+/state/
+*.zip
+*.db
+*.sqlite
+*.sqlite3
+*.jsonl
+
+# Local/runtime
+__pycache__/
+.pytest_cache/
+.DS_Store
