@@ -11,3 +11,13 @@
 __pycache__/
 .pytest_cache/
 .DS_Store
+
+# Additional secret/config protection
+.env
+.env.*
+*.pem
+*.key
+*.secret
+credentials.json
+secrets.json
+exports/
