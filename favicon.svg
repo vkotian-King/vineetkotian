@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0d0f14"/>
-  <text x="32" y="42" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="700" fill="#5b8dee">VK</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#73a0ff"/><path fill="#0c1018" d="M12 13h12v20l12-20h15L36 34l17 17H37L24 39v12H12z"/><circle cx="51" cy="13" r="5" fill="#7ce3c0"/></svg>
