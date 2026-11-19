@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "job-search-skill-library",
+  "version": "0.1.3",
+  "description": "Evidence-based job search skills for role analysis, applications, and interviews.",
+  "author": {
+    "name": "Vineet Kotian"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Job Search Skill Library",
+        "shortDescription": "Evidence-led job search skills",
+        "longDescription": "A compact set of reusable skills for evaluating job descriptions, assessing evidence-based fit, selecting roles, optimizing applications, preparing for interviews, and identifying career skill gaps. Uses a shared source-of-truth evidence foundation and does not invent candidate claims.",
+        "developerName": "Vineet Kotian",
+        "category": "Productivity",
+        "capabilities": [],
+        "defaultPrompt": "Use the Job Search Skill Library to evaluate this role and guide my next steps using verified evidence."
+      }
+    }
+  }
+}
